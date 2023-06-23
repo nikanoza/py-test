@@ -1,11 +1,15 @@
-def main(string):
+def main():
+    user_input = input("Greeting: ")
+    print(bank(user_input))
+    
+def bank(string):
     result = string.lstrip().lower()
     if result.startswith("hello"):
-        print("$0")
+        return("$0")
     elif result.startswith("h") and not result.startswith("hello"):
-        print("$20")
+        return("$20")
     else:
-        print("$100")
+        return("$100")
 
-user_input = input("Greeting: ")
-main(user_input)
+if __name__ == "__main__":
+    main()
