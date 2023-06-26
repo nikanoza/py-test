@@ -14,4 +14,5 @@ def is_valid(s):
     match = re.match(pattern, s) and not re.match(pattern_2, s)
     return match
 
-main()
+if __name__ == "__main__":
+    main()
