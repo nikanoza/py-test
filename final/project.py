@@ -2,13 +2,14 @@ import random
 
 combination = ["2","3","4","5","6","7","8","9","10", "J", "Q", "K", "T"]
 
-def main():
+def game():
     score = 0
     start = random_cards()
-    print(f"card: {combination[start]}")
     while True:
+        print(f"card: {combination[start]}")
+        user = user_choice()
         random_element_index = random_cards()
-        result = check(start, random_element_index)
+        result = check(start, random_element_index, user)
         if(result):
             score += 1
             start = random_element_index
@@ -16,8 +17,7 @@ def main():
             break
     print(f"your score is: {score}")
 
-def check(start, next):
-    user = user_choice()
+def check(start, next, user):
     return (user and next > start) or (not user and next < start)
 
 
@@ -33,4 +33,4 @@ def user_choice():
     return user_input == "high"
 
 if __name__ == "__main__":
-    main()
+    game()
