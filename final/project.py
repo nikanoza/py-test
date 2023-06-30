@@ -2,6 +2,7 @@ import random
 
 combination = ["2","3","4","5","6","7","8","9","10", "J", "Q", "K", "T"]
 
+
 def game():
     score = 0
     start = random_cards()
@@ -15,7 +16,7 @@ def game():
             start = random_element_index
         else:
             break
-    print(f"your score is: {score}")
+    print(f"Your score is: {score}")
 
 def check(start, next, user):
     return (user and next > start) or (not user and next < start)
